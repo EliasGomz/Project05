@@ -7,20 +7,21 @@ import {
 } from "react-native";
 import store from "../../app/store";
 import { Provider } from 'react-redux';
-import Counter from "../counter";
-import FirstPokeGen from "../../components/firstPokeGen";
+import FirstPokeGen from "../../components/firstPokeGen/pokeDetails";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import Header from "../header";
 
 
 const HomePage = () => {
 
     return (
         <Provider store={store}>
-            <Counter />
+            <Header />
+            <KeyboardAwareScrollView>
+                <FirstPokeGen />
+            </KeyboardAwareScrollView>  
         </Provider>
-        // <KeyboardAwareScrollView>
-        //     <FirstPokeGen />
-        // </KeyboardAwareScrollView>     
+           
     )
 
 };

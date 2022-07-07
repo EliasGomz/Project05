@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { FlatList, Image, Text, View } from "react-native";
+import PokeView from "../../../screens/PokeScreen/firstGenPoke";
+
 
 
 const pokePath = "https://pokeapi.co/api/v2/";
@@ -28,24 +30,11 @@ const FirstPokeGen = () => {
       fetchFirstGenPokemons();
     }, []);
 
-    const renderPokemon = ({ item }) => {
-        return (
-            <View>
-                <Text>{item.name}</Text>
-                <Image 
-                    style={{width: 100, height: 100}}
-                    source={{
-                        uri: item.sprites.front_default,
-                    }}
-                />
-            </View>
-        )
-    }
-
-    return (
-        <View>
-            <FlatList data={firstGenPokemonDatails} renderItem={renderPokemon}/>
-        </View>
+    return(
+        <PokeView 
+            firstGenPoke = {firstGenPokemonDatails}
+        />
     )
+
 };
 export default FirstPokeGen;
