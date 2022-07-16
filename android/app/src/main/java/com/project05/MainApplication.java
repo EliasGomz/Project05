@@ -12,9 +12,19 @@ import com.facebook.soloader.SoLoader;
 import com.project05.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.zoontek.rnbootsplash.RNBootSplashPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
+ 
+  protected List<ReactPackage> getPackages() {
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    List<ReactPackage> packages = new PackageList(this).getPackages();
+    // …
+    packages.add(new RNBootSplashPackage());
+    return packages;
+  }
+  
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override
