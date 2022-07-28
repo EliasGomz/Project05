@@ -37,7 +37,7 @@ const MyStack = () => {
                 options={{
                     title: '',
                     animation:'slide_from_right',
-                    headerShown: false,
+                    headerTransparent: true
                 }}
             />
         </HomeStack.Navigator>

@@ -8,16 +8,15 @@ import Header from '../../components/header'
 import LoadImg from  '../../Assets/icons/iconLoading/loading.png'
 
 const PokeView = ({PokeDetails, isLoading}) => {
-
-    const keyExtractor= (item, index) => `${index}-${item}`;
+ 
     return (     
         <>  
             <FlatList 
                 style={styles.pokeRender}
                 data={PokeDetails} 
                 numColumns={2}
-                contentContainerStyle={{paddingBottom: 30}}
-                keyExtractor={keyExtractor}
+                contentContainerStyle={styles.contContStyle}
+                keyExtractor={(item) => item.id}
                 renderItem={({item}) => <RenderPokemon item={item} />}
                 ListEmptyComponent={() => (
                     <>

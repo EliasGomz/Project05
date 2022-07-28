@@ -21,6 +21,7 @@ const RenderPokemon = ({item}) => {
 
 
     return (
+        // agrea el activeOpacity a todoos los TooucheableOpacity
         <TouchableOpacity 
             style={[styles.pokeCont, {backgroundColor: pokeTheme[type]}]}
             onPress={PokeDetail}

@@ -24,6 +24,8 @@ const PokeStatsDetails = ({item}) => {
             <View style={styles.contP}>
                 <Text style={[styles.pokeT, {color: pokeTheme[type]}]}>Base Stats</Text>
                 <View style={styles.contS}>
+
+                    {/* hacer un map para traer las stats */}
                     <View style={styles.contStats}>
                         <Text style={styles.contTexStats}>HP</Text>
                         <Text style={styles.contTexStats}>Defense</Text>
@@ -43,6 +45,8 @@ const PokeStatsDetails = ({item}) => {
                         <Text style={styles.contStatsNum}>{item.stats[4].base_stat}</Text>
                         <Text style={styles.contStatsNum}>{item.stats[5].base_stat}</Text>
                     </View>
+
+                    {/*  */}
                     <View style={styles.contStatsL}>
                         <StarLine 
                             number={item.stats[0].base_stat}

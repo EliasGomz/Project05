@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
     pokeRender:{
         backgroundColor: pokeTheme.background,
     },
+    contContStyle:{
+        paddingBottom: 30
+    },
     pokeCont:{
         height: 120,
         width: 170,

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import RNBootSplash from "react-native-bootsplash";
 import Navigation from './Navigation';
+import { LogBox } from 'react-native';
 
+LogBox.ignoreAllLogs();
 
 const App = () => {
   

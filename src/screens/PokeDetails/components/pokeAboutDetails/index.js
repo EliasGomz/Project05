@@ -13,6 +13,7 @@ import PikaLine from '../../../../Assets/icons/iconLoading/PikachuR.gif'
 
 const PokeAboutDetails = ({item}) => {
     const type = item.types[0].type.name;
+    const pokeHeight = parseHeight(item.height)
 
     return (
         <>
@@ -24,7 +25,7 @@ const PokeAboutDetails = ({item}) => {
                 />
                 <Text style={[styles.Carac, {color: pokeTheme[type]}]}>Caracteristicas</Text>
                 <View style={[styles.contA, {borderColor: pokeTheme[type]}]}>
-                    <Text style={styles.pokeH}>{parseHeight(item.height)}m</Text>
+                    <Text style={styles.pokeH}>{`${pokeHeight}m`}</Text>
                     <FontAwesome5 name='ruler' style={styles.iconH}/>
                     <Text style={styles.pokeT}>Height</Text>
                 </View>

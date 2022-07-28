@@ -14,23 +14,22 @@ export const parseNumber = (item) => {
 }
 
 export const parseHeight = (height) => {
-    return (
-        <>
-            {height
-                ?.toString()
-                .slice(
-                    0, height.toString().length -1
-                )}.
-                {height
-                ?.toString()
-                .slice(
-                    height.toString().length -1,
-                    height.toString().length,
-                )}
-        </>
+   const pokeHeight = `${height
+    ?.toString()
+    .slice(
+        0, height.toString().length -1
+    )}.${
+    height
+    ?.toString()
+    .slice(
+        height.toString().length -1,
+        height.toString().length,
     )
+    }`
+   
+    return pokeHeight;    
 }
-
+//mejor optmizacion
 export const parseWeight= (weight) => {
     return (
         <>

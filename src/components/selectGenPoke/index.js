@@ -13,30 +13,23 @@ import img6 from '../../Assets/icons/iconCardSecnGen/158.png'
 import pokeCard from '../../Assets/icons/iconsCards/IconCardSelect.png'
 import pokePattern from '../../Assets/icons/iconsCards/Pattern.png'
 
-const FirstGen = `${pokePath}${firstGen}`;
-const SecGen = `${pokePath}${secGen}`;
 
 const SelectGenPoke = () => {
     const navigation = useNavigation();
 
-    const KantoGen = () => {
-        navigation.navigate("pokeView", {
-            PokemonPaht: FirstGen,
+    const handleNavigation = ( PokemonPaht ) => {
+        navigation.navigate('pokeView', {
+            PokemonPaht,
         })
     }
 
-    const JhotoGen = () => {
-        navigation.navigate("pokeView", {
-            PokemonPaht: SecGen,
-        })
-    }
-
+    // optimizar la navegacion
 
     return(
         <View style={styles.cont}>
             <TouchableOpacity 
                 style={styles.btnG}
-                onPress={KantoGen}
+                onPress={() => handleNavigation(firstGen)}
             >
                 <Image 
                     style={styles.pokeCard}
@@ -67,7 +60,7 @@ const SelectGenPoke = () => {
             </TouchableOpacity>
             <TouchableOpacity 
                 style={styles.btnG}
-                onPress={JhotoGen}
+                onPress={() => handleNavigation(secGen)}
             >
                 <Image 
                     style={styles.pokeCard}

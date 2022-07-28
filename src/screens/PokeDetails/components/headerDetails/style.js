@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     pokeName:{
         color: pokeTheme.white,
         fontSize: 30,
-        left: 10,
+        left: 45,
         top: 10,
         fontWeight: 'bold',
     },

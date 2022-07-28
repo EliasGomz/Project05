@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
 import PokeView from "../../screens/PokeView";
+import { Get } from "../../Api/ApiRequest";
+
 
 const PokeExtractor = ({PokemonPaht}) => {
     const [PokemonDatails, setPokeDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    console.log(PokemonPaht);
+    const path = PokemonPaht
+
     useEffect(() => {
-        const fetchFirstGenPokemons = async () => {
-            const PokemonIdsResponse = await fetch(PokemonPaht).then(v => v.json());
-            const pokeArr = [];
-            for (const PokemonDatails of PokemonIdsResponse.results) {
-                const pDetails = await fetch(PokemonDatails.url).then(v => v.json());
-                pokeArr.push(pDetails);
-            }   
-            setPokeDetails(pokeArr);
-            setIsLoading(false);    
-      };
-      fetchFirstGenPokemons();
+        newsResponse()
     }, []);
+    
+    const newsResponse = async() => {
+        const response = await Get(path);
+        const pokearr = []
+        for (const Details of response.results) {
+            const path = await Details.url
+            const Det = await Get(path)
+            pokearr.push(Det)
+        }
+        setPokeDetails(pokearr);
+        setIsLoading(false); 
+    }
+
 
     return(
             <PokeView 

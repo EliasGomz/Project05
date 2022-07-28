@@ -7,7 +7,7 @@ import { useRoute } from "@react-navigation/native";
 const PokView = () => {
 
     const route = useRoute();
-
+    // usar use route en poque extractor 
     return (
         <>
             <Header />
